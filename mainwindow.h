@@ -9,6 +9,7 @@
 #include<QThread>
 #include <QtCore>
 #include<QTimer>
+#include<QButtonGroup>
 using namespace cv;
 namespace Ui {
 class MainWindow;
@@ -29,19 +30,25 @@ private:
     int state;
     VideoCapture *cap;
     INFO *info;
+
     int fps;
+    int sort;//摄像机品牌
+    QString url;
 protected:
     void run();
 
 public:
     Thread(QObject *parent=0);
     ~Thread();
-
+    QString othertxt;
 signals:
     void UpdateSignal(int state,int fps);
+    void sendMessage (QString msg);
 public slots:
+    void selectcamera(int sort);
     void State();
     void setInfo(INFO *info);
+
 };
 
 
@@ -62,15 +69,20 @@ public slots:
     void updatepasswd(QString passwd);
     void updateip(QString ip);
     void updateport(QString port);
+    void selectcamera(int);
+    void showMessage(QString msg);
+void setothertxt();
 
 signals:
     void updateinfo(INFO *info);
+
 private:
     Ui::MainWindow *ui;
     Thread *mythread;
     QTimer *timer;
     INFO *info;
     QString time;
+    QButtonGroup buttongroup;
 };
 
 #endif // MAINWINDOW_H

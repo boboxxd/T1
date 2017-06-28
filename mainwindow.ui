@@ -28,7 +28,58 @@
         <property name="title">
          <string>登录信息</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
+        <layout class="QGridLayout" name="gridLayout_3" rowstretch="3,1,3,0,2,2">
+         <item row="2" column="0">
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>摄像机品牌</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0">
+             <widget class="QRadioButton" name="nanruiradio">
+              <property name="text">
+               <string>南瑞</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QRadioButton" name="haikangradio">
+              <property name="text">
+               <string>海康</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QRadioButton" name="otherradio">
+              <property name="text">
+               <string>其他</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+           <zorder>haikangradio</zorder>
+           <zorder>haikangradio</zorder>
+           <zorder>haikangradio</zorder>
+           <zorder>nanruiradio</zorder>
+           <zorder>otherradio</zorder>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="4" column="0">
+          <widget class="QTextEdit" name="otherEdit"/>
+         </item>
          <item row="0" column="0">
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
@@ -88,6 +139,26 @@
             </layout>
            </item>
           </layout>
+         </item>
+         <item row="1" column="0">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>37</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>输入RTSP地址：</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
